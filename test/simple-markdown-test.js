@@ -1159,7 +1159,7 @@ describe('simple markdown', function () {
         }
       ])
 
-      var parsed3 = implicitParse(
+      parsed3 = implicitParse(
                 '[image]: http://example.com/test.gif (*title text*)\n\n' +
                 '![image][]\n\n'
             )
@@ -1668,7 +1668,7 @@ describe('simple markdown', function () {
                 )
       }])
 
-      var parsed = blockParse(
+      parsed = blockParse(
                 '~~~\n' +
                 '    this should be indented\n' +
                 '~~~\n\n'
@@ -2701,7 +2701,7 @@ describe('simple markdown', function () {
         var oldconsolewarn = console.warn
         var warnings = []
         console.warn = function (warning) { warnings.push(warning) }
-        var parser1 = SimpleMarkdown.parserFor({
+        _ = SimpleMarkdown.parserFor({
           em1: _.extend({}, emRule, {
             order: 1 / 0 - 1 / 0
           }),
