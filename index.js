@@ -8,10 +8,8 @@ if (process.argv.length > 2) {
     if (err) throw err
 
     const mdParse = SimpleMarkdown.defaultBlockParse
-    const mdOutput = SimpleMarkdown.defaultOutput
 
     const syntaxTree = mdParse(data)
-    const reactElems = mdOutput(syntaxTree)
     console.log(JSON.stringify(syntaxTree, null, 4))
   })
 }
